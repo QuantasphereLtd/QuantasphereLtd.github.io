@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quantasphere Portal</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="dashboard.html" class="logo-link">
+                    <div class="logo">
+                        <img src="assets/logo-transparent.png" alt="Quantasphere Logo" width="120" height="120">
+                    </div>
+                </a>
+            </div>
+
+            <!-- External Website Link -->
+            <div class="external-link">
+                <a href="https://quantasphere.tech" target="_blank" class="website-btn">
+                    Go to Quantasphere.co Website
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">Vision and Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team.html" class="nav-link">The Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="roadmap.html" class="nav-link">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gtm.html" class="nav-link">GTM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="technology.html" class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing.html" class="nav-link">Market Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="financials.html" class="nav-link">Financials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="competitor-analysis.html" class="nav-link">Competitor Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="partnerships.html" class="nav-link">Partnerships</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Footer Contact -->
+            <div class="contact-info">
+                <p><strong>Quantasphere Ltd.</strong></p>
+                <p>128, City Road</p>
+                <p>London</p>
+                <p>United Kingdom</p>
+                <p>EC1V 2NX</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-header">
+                <h1>Vision and Mission</h1>
+                <div class="user-info">
+                    <span id="userEmail">Admin</span>
+                    <a href="index.html" class="logout-btn">Logout</a>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <!-- The North Star Section -->
+                <div class="north-star-section">
+                    <div class="north-star-box">
+                        <h2>The North Star</h2>
+                        <p>Content for The North Star will be provided</p>
+                    </div>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="content-grid-three-oval">
+                    <div class="oval-content-box info-box">
+                        <h3>Vision</h3>
+                        <p><strong>To secure all data from current and future threats.</strong></p>
+                        <p>We envision a world where organizations don't have to worry about the security of their data, regardless of new technology or emerging threats.</p>
+                        <p>Every organization, from startups to global enterprises, should have access to unbreakable security that evolves with technology.</p>
+                        <p>Data protection should be seamless, invisible, and absolutely reliable across all platforms and devices.</p>
+                        <p>We believe in creating security solutions that work silently in the background, giving businesses the confidence to innovate without fear.</p>
+                        <p>Our vision extends beyond current limitations to a future where quantum computing enhances rather than threatens our digital infrastructure.</p>
+                    </div>
+                    <div class="oval-content-box info-box">
+                        <h3>Mission</h3>
+                        <p><strong>To build quantum-safe security for a post-quantum world.</strong></p>
+                        <p>We develop and deploy quantum technologies that protect critical systems and sensitive data against both current and future cyber threats.</p>
+                        <p>Our mission is to make advanced security accessible to every business, regardless of size or technical expertise.</p>
+                        <p>We create practical solutions that integrate seamlessly into existing systems while providing unprecedented protection levels.</p>
+                        <p>Every line of code we write, every algorithm we develop, serves the singular purpose of keeping your data safe.</p>
+                        <p>We work directly with organizations to understand their unique challenges and build customized protection strategies.</p>
+                        <p>Our commitment is to deliver security that not only meets today's standards but anticipates tomorrow's threats.</p>
+                    </div>
+                    <div class="oval-content-box info-box">
+                        <h3>Values</h3>
+                        <p><strong>The principles that guide our decisions and shape our company culture.</strong></p>
+                        <p><strong>Transparency:</strong> We operate with openness and honesty in our communications and business practices.</p>
+                        <p><strong>Respect:</strong> We value every individual and treat all partners with dignity and consideration.</p>
+                        <p><strong>Integrity:</strong> We uphold high ethical standards and always aim to do what's right.</p>
+                        <p><strong>Excellence:</strong> We strive for high quality in everything we do, from our technology to our service.</p>
+                        <p><strong>Humility:</strong> We remain humble and open to learning, knowing that great results come from collaboration.</p>
+                        <p><strong>Collaboration:</strong> We work together as one team, combining our diverse talents to achieve our goals.</p>
+                        <p><strong>Curiosity:</strong> We have a strong desire for knowledge and innovation, always asking 'what if?' and 'why not?'</p>
+                    </div>
+                </div>
+
+                <!-- Related Links -->
+                <div class="related-links">
+                    <h3>Related Links:</h3>
+                    <div class="links-container">
+                        <a href="team.html" class="related-link">The Team</a>
+                        <a href="roadmap.html" class="related-link">Roadmap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const userEmail = localStorage.getItem('userEmail');
+            
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Display user email
+            if (userEmail) {
+                document.getElementById('userEmail').textContent = userEmail;
+            }
+        });
+
+        // Logout functionality
+        document.querySelector('.logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

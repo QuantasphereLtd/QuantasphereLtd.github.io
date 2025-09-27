@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission - Quantasphere Portal</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <style>
+        .pdf-viewer-container {
+            width: 100%;
+            height: calc(100vh - 200px);
+            border: 3px solid #2c3e50;
+            background-color: #ffffff;
+            margin-top: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .pdf-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            color: #6c757d;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .pdf-placeholder h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .pdf-placeholder p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .upload-area {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px dashed #2c3e50;
+            border-radius: 0;
+            background-color: #ffffff;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover {
+            background-color: #f8f9fa;
+            border-color: #e74c3c;
+        }
+        
+        .upload-btn {
+            background-color: #e74c3c;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .upload-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="dashboard.html" class="logo-link">
+                    <div class="logo">
+                        <img src="assets/logo-transparent.png" alt="Quantasphere Logo" width="120" height="120">
+                    </div>
+                </a>
+            </div>
+
+            <!-- External Website Link -->
+            <div class="external-link">
+                <a href="https://quantasphere.tech" target="_blank" class="website-btn">
+                    Go to Quantasphere.co Website
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">Vision and Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team.html" class="nav-link">The Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="roadmap.html" class="nav-link">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gtm.html" class="nav-link">GTM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="technology.html" class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing.html" class="nav-link">Market Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="financials.html" class="nav-link">Financials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="competitor-analysis.html" class="nav-link">Competitor Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="partnerships.html" class="nav-link">Partnerships</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Footer Contact -->
+            <div class="contact-info">
+                <p><strong>Quantasphere Ltd.</strong></p>
+                <p>128, City Road</p>
+                <p>London</p>
+                <p>United Kingdom</p>
+                <p>EC1V 2NX</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-header">
+                <h1>Mission</h1>
+                <div class="user-info">
+                    <span id="userEmail">Admin</span>
+                    <a href="index.html" class="logout-btn">Logout</a>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <!-- PDF Viewer Container -->
+                <div class="pdf-viewer-container">
+                    <div class="pdf-placeholder" id="pdfPlaceholder">
+                        <h3>Mission Document</h3>
+                        <p>This area will display the Mission PDF document.</p>
+                        <p>Click "Upload PDF" below to load a PDF file, or the document will be automatically loaded when available.</p>
+                        
+                        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                            <p><strong>Click here to upload a PDF file</strong></p>
+                            <button class="upload-btn" type="button">Upload PDF</button>
+                            <input type="file" id="fileInput" accept=".pdf" style="display: none;" onchange="loadPDF(this)">
+                        </div>
+                    </div>
+                    
+                    <iframe class="pdf-viewer" id="pdfViewer" style="display: none;"></iframe>
+                </div>
+
+                <!-- Related Links -->
+                <div class="related-links">
+                    <h3>Related Links:</h3>
+                    <div class="links-container">
+                        <a href="dashboard.html" class="related-link">← Back to Dashboard</a>
+                        <a href="vision.html" class="related-link">Vision</a>
+                        <a href="values.html" class="related-link">Values</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const userEmail = localStorage.getItem('userEmail');
+            
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Display user email
+            if (userEmail) {
+                document.getElementById('userEmail').textContent = userEmail;
+            }
+            
+            // Try to load default PDF if available
+            loadDefaultPDF();
+        });
+
+        // Logout functionality
+        document.querySelector('.logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'index.html';
+        });
+
+        // Load PDF function
+        function loadPDF(input) {
+            const file = input.files[0];
+            if (file && file.type === 'application/pdf') {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const pdfViewer = document.getElementById('pdfViewer');
+                    const pdfPlaceholder = document.getElementById('pdfPlaceholder');
+                    
+                    pdfViewer.src = e.target.result;
+                    pdfViewer.style.display = 'block';
+                    pdfPlaceholder.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select a valid PDF file.');
+            }
+        }
+
+        // Load default PDF function
+        function loadDefaultPDF() {
+            const pdfPath = 'assets/documents/mission.pdf';
+            
+            fetch(pdfPath)
+                .then(response => {
+                    if (response.ok) {
+                        const pdfViewer = document.getElementById('pdfViewer');
+                        const pdfPlaceholder = document.getElementById('pdfPlaceholder');
+                        
+                        pdfViewer.src = pdfPath;
+                        pdfViewer.style.display = 'block';
+                        pdfPlaceholder.style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.log('Default PDF not found, showing placeholder');
+                });
+        }
+
+        // Handle PDF viewer errors
+        document.getElementById('pdfViewer').addEventListener('error', function() {
+            const pdfViewer = document.getElementById('pdfViewer');
+            const pdfPlaceholder = document.getElementById('pdfPlaceholder');
+            
+            pdfViewer.style.display = 'none';
+            pdfPlaceholder.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Model - Quantasphere Portal</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="dashboard.html" class="logo-link">
+                    <div class="logo">
+                        <img src="assets/logo-transparent.png" alt="Quantasphere Logo" width="120" height="120">
+                    </div>
+                </a>
+            </div>
+
+            <!-- External Website Link -->
+            <div class="external-link">
+                <a href="https://quantasphere.tech" target="_blank" class="website-btn">
+                    Go to Quantasphere.co Website
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Vision and Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team.html" class="nav-link">The Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="roadmap.html" class="nav-link">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gtm.html" class="nav-link">GTM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="technology.html" class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing.html" class="nav-link">Market Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="financials.html" class="nav-link active">Financials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="competitor-analysis.html" class="nav-link">Competitor Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="partnerships.html" class="nav-link">Partnerships</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Footer Contact -->
+            <div class="contact-info">
+                <p><strong>Quantasphere Ltd.</strong></p>
+                <p>128, City Road</p>
+                <p>London</p>
+                <p>United Kingdom</p>
+                <p>EC1V 2NX</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-header">
+                <h1>Financial Model</h1>
+                <div class="user-info">
+                    <span id="userEmail">Admin</span>
+                    <a href="index.html" class="logout-btn">Logout</a>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <!-- The North Star Section -->
+                <div class="north-star-section">
+                    <div class="north-star-box">
+                        <h2>The North Star</h2>
+                        <p>Financial Model content will be provided</p>
+                    </div>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="content-grid-three-oval">
+                    <a href="revenue-projections.html" target="_blank" class="oval-content-box">
+                        <h3>Revenue Projections</h3>
+                        <p>Revenue forecasts and projections</p>
+                    </a>
+                    <a href="cost-structure.html" target="_blank" class="oval-content-box">
+                        <h3>Cost Structure</h3>
+                        <p>Operating costs and expense breakdown</p>
+                    </a>
+                    <a href="financial-metrics.html" target="_blank" class="oval-content-box">
+                        <h3>Financial Metrics</h3>
+                        <p>Key performance indicators and metrics</p>
+                    </a>
+                </div>
+
+                <!-- Related Links -->
+                <div class="related-links">
+                    <h3>Related Links:</h3>
+                    <div class="links-container">
+                        <a href="financials.html" class="related-link">← Back to Financials</a>
+                        <a href="investors.html" class="related-link">Investors</a>
+                        <a href="procurement-policies.html" class="related-link">Procurement Policies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const userEmail = localStorage.getItem('userEmail');
+            
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Display user email
+            if (userEmail) {
+                document.getElementById('userEmail').textContent = userEmail;
+            }
+        });
+
+        // Logout functionality
+        document.querySelector('.logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
