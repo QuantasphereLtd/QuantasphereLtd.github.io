@@ -236,10 +236,13 @@ body {
     background-color: #ffffff;
     border: 3px solid #2c3e50;
     border-radius: 0;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     margin-bottom: 25px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .north-star-box h2 {
@@ -310,29 +313,22 @@ body {
     background-color: #ffffff;
     border: 3px solid #2c3e50;
     border-radius: 0;
-    padding: 25px 30px;
+    padding: 20px;
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
     display: block;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .oval-content-box:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    background-color: #e74c3c;
-    border-color: #c0392b;
-    color: #ffffff;
-}
-
-.oval-content-box:hover h3 {
-    color: #ffffff;
-}
-
-.oval-content-box:hover p {
-    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
 }
 
 .oval-content-box h3 {
