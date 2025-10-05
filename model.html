@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model - Quantasphere Portal</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="dashboard.html" class="logo-link">
+                    <div class="logo">
+                        <img src="assets/logo-transparent.png" alt="Quantasphere Logo" width="120" height="120">
+                    </div>
+                </a>
+            </div>
+
+            <!-- External Website Link -->
+            <div class="external-link">
+                <a href="https://quantasphere.tech" target="_blank" class="website-btn">
+                    Go to Quantasphere.co Website
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Vision and Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team.html" class="nav-link">The Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="roadmap.html" class="nav-link">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gtm.html" class="nav-link">GTM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="technology.html" class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing.html" class="nav-link">Market Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="financials.html" class="nav-link">Financials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="competitor-analysis.html" class="nav-link">Competitor Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="partnerships.html" class="nav-link">Partnerships</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Footer Contact -->
+            <div class="contact-info">
+                <p><strong>Quantasphere Ltd.</strong></p>
+                <p>128, City Road</p>
+                <p>London</p>
+                <p>United Kingdom</p>
+                <p>EC1V 2NX</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-header">
+                <h1>Model</h1>
+                <div class="user-info">
+                    <span id="userEmail">Admin</span>
+                    <a href="index.html" class="logout-btn">Logout</a>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <!-- Coming Soon Message -->
+                <div class="content-grid-two-oval">
+                    <div class="oval-content-box info-box">
+                        <h3>Model</h3>
+                        <p><strong>Coming Soon</strong></p>
+                        <p>This section is currently under development. The financial model will be available soon.</p>
+                    </div>
+                </div>
+
+                <!-- Related Links -->
+                <div class="related-links">
+                    <h3>Related Links:</h3>
+                    <div class="links-container">
+                        <a href="financials.html" class="related-link">Financials</a>
+                        <a href="revenue-projections.html" class="related-link">Revenue Projections</a>
+                        <a href="ltv-cac-analysis.html" class="related-link">LTV CAC Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const userEmail = localStorage.getItem('userEmail');
+            
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Display user email
+            if (userEmail) {
+                document.getElementById('userEmail').textContent = userEmail;
+            }
+        });
+
+        // Logout functionality
+        document.querySelector('.logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
+
